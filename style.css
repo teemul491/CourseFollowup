@@ -38,6 +38,7 @@ ul.topnav li a {
     display: block;
     text-decoration: none;
     min-height: 16px;
+    /* used min-height because we don't want text to shrink more than that for a navbar*/
     padding: 14px;
     text-transform: uppercase;
     color: #666;
@@ -46,4 +47,42 @@ ul.topnav li a {
 ul.topnav li a:hover {
     background-color: #0080ff;
     color: #fff;
+}
+
+ul.topnav li.dropdownIcon {
+    display: none;
+}
+
+
+/*############ Mobile ################*/
+@media screen and (max-width:680px) {
+    ul.topnav li:not(:nth-child(1)) {
+        display: none;
+    }
+
+    ul.topnav li.dropdownIcon {
+        display: block;
+        float: right;
+    }
+
+    ul.topnav.responsive li.dropdownIcon {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    ul.topnav.responsive {
+        position: relative;
+    }
+
+    ul.topnav.responsive li {
+        display: inline;
+        float: none;
+    }
+
+    ul.topnav.responsive li a {
+        display: block;
+        text-align: left;
+    }
+
 }
